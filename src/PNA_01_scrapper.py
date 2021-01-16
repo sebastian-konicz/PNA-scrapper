@@ -38,7 +38,7 @@ def main():
 
     # saving dataframe
     print("saving files")
-    zipcodes.to_csv(project_dir + r'\data\interim\zipcodes.csv', index=False, encoding='UTF-8')
+    zipcodes.to_csv(project_dir + r'\data\interim\01_zipcodes.csv', index=False, encoding='UTF-8')
 
     # end time of program + duration
     end_time = time.time()
