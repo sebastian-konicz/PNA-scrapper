@@ -19,49 +19,26 @@ def main():
     # official link to the document
     link = r'https://www.poczta-polska.pl/hermes/uploads/2013/11/spispna.pdf'
 
+    # empty table list
+    tables_list = []
 
-    # with pdfplumber.open(file) as pdf:
-    #     first_page = pdf.pages[3]
-    #     table = first_page.extract_table()
-    #     print(table)
-    #     im = first_page.to_image()
-    #     im1 = im.draw_rects(first_page.extract_words())
-    #     im2 = im.debug_tablefinder()
-    #     im2.save(r'C:\Users\sebas\OneDrive\Pulpit\PNA-scrapper\data\interim\image.jpg')
-    #     display(Image(im))
+    # looping throug tabels on page from page 3 to
+    for i in range(4, 1649):
+        table = tabula.read_pdf(link, pages=i)
+        table_df = table[0]
+        print("table form page {}".format(i))
+        # renaming columna
+        table_df.columns = ["PNA", "ADRES", "WOJ"]
+        # dropping first row
+        table_df = table_df.iloc[1:]
+        tables_list.append(table_df)
 
-    # pages with zip code table 3 -
-    table_start = tabula.read_pdf(link, pages=3)
-    table_middle_1 = tabula.read_pdf(link, pages=4)
-    table_middle_2 = tabula.read_pdf(link, pages=100)
-    table_middle_3 = tabula.read_pdf(link, pages=824)
-    table_end = tabula.read_pdf(link, pages=1648)
-
-    print("first table")
-    print(table_start[0].head())
-    print("middle table 1")
-    print(table_middle_1[0].head())
-    print("middle table 2")
-    print(table_middle_2[0].head())
-    print("middle table 3")
-    print(table_middle_3[0].head())
-    print("last table")
-    print(table_end[0].head())
-
-
-    table_start = table_start[0]
-    table_middle_1 = table_middle_1[0]
-    table_middle_2 = table_middle_2[0]
-    table_middle_3 = table_middle_3[0]
-    table_end = table_end[0]
+    # concatenating dataframes
+    zipcodes = pd.concat(tables_list, axis=0, sort=False)
 
     # saving dataframe
     print("saving files")
-    table_start.to_csv(project_dir + r'\data\interim\0_table_start.csv', index=False, encoding='UTF-8')
-    table_middle_1.to_csv(project_dir + r'\data\interim\1_table_middle_1.csv', index=False, encoding='UTF-8')
-    table_middle_2.to_csv(project_dir + r'\data\interim\1_table_middle_2.csv', index=False, encoding='UTF-8')
-    table_middle_3.to_csv(project_dir + r'\data\interim\1_table_middle_3.csv', index=False, encoding='UTF-8')
-    table_end.to_csv(project_dir + r'\data\interim\2_table_end.csv', index=False, encoding='UTF-8')
+    zipcodes.to_csv(project_dir + r'\data\interim\zipcodes.csv', index=False, encoding='UTF-8')
 
     # end time of program + duration
     end_time = time.time()
