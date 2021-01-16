@@ -41,7 +41,7 @@ PNA,CITY,ADRESS,WOJ,COU,ADRESS_2,MUN
 16-424, Agrafinówka,filipów suwalski,podlaskie,suwalski,filipów ,filipów
 37-734, Aksmanice,fredropol przemyski,podkarpackie,przemyski,fredropol ,fredropol
 26-067, Akwizgran,strawczyn kielecki,świętokrzyskie,kielecki,strawczyn ,strawczyn
-62-065, Albertowsko,grodzisk wielkopolski grodziski,wielkopolskie,opolski,grodzisk wielk grodziski,grodzisk
+62-065, Albertowsko,grodzisk wielkopolski grodziski,wielkopolskie,opolski,grodzisk wielk,grodzisk
 21-013, Albertów,puchaczów łęczyński,lubelskie,łęczyński,puchaczów ,puchaczów
 95-083, Albertów,lutomiersk pabianicki,łódzkie,pabianicki,lutomiersk ,lutomiersk
 97-217, Albertów,lubochnia tomaszowski,łódzkie,tomaszowski,lubochnia ,lubochnia
@@ -56,14 +56,14 @@ PNA,CITY,ADRESS,WOJ,COU,ADRESS_2,MUN
 23-450, Albinów Mały,goraj biłgorajski,lubelskie,biłgorajski,goraj ,goraj
 95-035, Aleksandria,ozorków zgierski,łódzkie,zgierski,ozorków ,ozorków
 05-192," Aleksandria,""4-6, 7-9(n), Nowe Miasto płoński"",mazowieckie",ozorków zgierski,łódzkie,zgierski,ozorków ,ozorków
-05-192," Aleksandria,""4-6, 7-9(n), Nowe Miasto płoński"",mazowieckie",12-15,łódzkie,,12-15,
-09-120," Aleksandria,""8-10(p), 11, 31 Nowe Miasto płoński"",mazowieckie",12-15,łódzkie,,12-15,
+05-192," Aleksandria,""4-6, 7-9(n), Nowe Miasto płoński"",mazowieckie",12-15,łódzkie,,,
+09-120," Aleksandria,""8-10(p), 11, 31 Nowe Miasto płoński"",mazowieckie",12-15,łódzkie,,,
 96-330, Aleksandria,puszcza mariańska żyrardowski,mazowieckie,żyrardowski,puszcza mariańska ,puszcza mariańska
 42-274, Aleksandria (Aleksandria Druga),konopiska częstochowski,śląskie,częstochowski,konopiska ,konopiska
 42-274, Aleksandria (Aleksandria Pierwsza),konopiska częstochowski,śląskie,częstochowski,konopiska ,konopiska
 62-874, Aleksandria,brzeziny kaliski,wielkopolskie,kaliski,brzeziny ,brzeziny
-22-360, Aleksandria Krzywowolska,rejowiec chełmski,lubelskie,chełmski,rejowiec ,rejowiec fabryczny
-22-360, Aleksandria Niedziałowska,rejowiec chełmski,lubelskie,chełmski,rejowiec ,rejowiec fabryczny
+22-360, Aleksandria Krzywowolska,rejowiec chełmski,lubelskie,chełmski,rejowiec ,rejowiec
+22-360, Aleksandria Niedziałowska,rejowiec chełmski,lubelskie,chełmski,rejowiec ,rejowiec
 56-160, Aleksandrowice,wińsko wołowski,dolnośląskie,wołowski,wińsko ,wińsko
 32-084, Aleksandrowice,zabierzów krakowski,małopolskie,krakowski,zabierzów ,zabierzów
 86-022, Aleksandrowiec,dobrcz bydgoski,kujawsko-pomorskie,bydgoski,dobrcz ,dobrcz
@@ -75,24 +75,24 @@ PNA,CITY,ADRESS,WOJ,COU,ADRESS_2,MUN
 09-440, Aleksandrowo,staroźreby płocki,mazowieckie,płocki,staroźreby ,staroźreby
 06-330, Aleksandrowo,chorzele przasnyski,mazowieckie,przasnyski,chorzele ,chorzele
 16-503, Aleksandrowo,krasnopol sejneński,podlaskie,sejneński,krasnopol ,krasnopol
-17-315, Aleksandrowo,grodzisk siemiatycki,podlaskie,siemiatycki,grodzisk ,grodzisk wielkopolski
+17-315, Aleksandrowo,grodzisk siemiatycki,podlaskie,siemiatycki,grodzisk ,grodzisk
 16-423, Aleksandrowo,bakałarzewo suwalski,podlaskie,suwalski,bakałarzewo ,bakałarzewo
 12-250, Aleksandrowo,orzysz piski,warmińsko-mazurskie,piski,orzysz ,orzysz
 63-800, Aleksandrowo,gostyń gostyński,wielkopolskie,gostyński,gostyń ,gostyń
 64-308, Aleksandrowo,rakoniewice grodziski,wielkopolskie,grodziski,rakoniewice ,rakoniewice
 64-400, Aleksandrowo,międzychód międzychodzki,wielkopolskie,międzychodzki,międzychód ,międzychód
 62-120, Aleksandrowo,wapno wągrowiecki,wielkopolskie,wągrowiecki,wapno ,wapno
-23-408, Aleksandrów (Aleksandrów Trzeci),aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów łódzki
-23-408, Aleksandrów,aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów łódzki
-23-408, Aleksandrów (Aleksandrów Drugi),aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów łódzki
-23-408, Aleksandrów (Aleksandrów Pierwszy),aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów łódzki
+23-408, Aleksandrów (Aleksandrów Trzeci),aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów
+23-408, Aleksandrów,aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów
+23-408, Aleksandrów (Aleksandrów Drugi),aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów
+23-408, Aleksandrów (Aleksandrów Pierwszy),aleksandrów biłgorajski,lubelskie,biłgorajski,aleksandrów ,aleksandrów
 23-275, Aleksandrów,gościeradów kraśnicki,lubelskie,kraśnicki,gościeradów ,gościeradów
 21-400, Aleksandrów,łuków łukowski,lubelskie,łukowski,łuków ,łuków
 21-421, Aleksandrów,stanin łukowski,lubelskie,łukowski,stanin ,stanin
 97-438, Aleksandrów,rusiec bełchatowski,łódzkie,bełchatowski,rusiec ,rusiec
-99-307, Aleksandrów,strzelce kutnowski,łódzkie,kutnowski,strzelce ,strzelce wielkie
+99-307, Aleksandrów,strzelce kutnowski,łódzkie,kutnowski,strzelce ,strzelce
 99-319, Aleksandrów,żychlin kutnowski,łódzkie,kutnowski,żychlin ,żychlin
-26-337, Aleksandrów,aleksandrów piotrkowski,łódzkie,piotrkowski,aleksandrów ,aleksandrów łódzki
+26-337, Aleksandrów,aleksandrów piotrkowski,łódzkie,piotrkowski,aleksandrów ,aleksandrów
 97-360, Aleksandrów,kamieńsk radomszczański,łódzkie,radomszczański,kamieńsk ,kamieńsk
 96-230, Aleksandrów,biała rawska rawski,łódzkie,rawski,biała rawska ,biała rawska
 97-225, Aleksandrów,ujazd tomaszowski,łódzkie,tomaszowski,ujazd ,ujazd
