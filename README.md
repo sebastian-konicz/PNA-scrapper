@@ -1,5 +1,5 @@
 # PNA-scrapper
-Lightweigth scraper for extractin polish ZIP codes from the official [PNA document](https://www.poczta-polska.pl/hermes/uploads/2013/11/spispna.pdf) created by Polish Postal Office.data
+Lightweigth scraper for extracting polish ZIP codes from the official **[PNA document](https://www.poczta-polska.pl/hermes/uploads/2013/11/spispna.pdf)** created by Polish Postal Office.data
 
 The aim of this project is create dataset with all zip codes in Poland along with the info about city, municipality, county and voivodeship.
 
@@ -72,7 +72,7 @@ Sebastian Konicz - sebastian.konicz@gmail.com
     ¦
  	+-- README.md          <- The top-level README for developers using this project.
     ¦
-    +-- requirements.txt   <- File with all necessary packages 					<- ?
+    +-- requirements.txt   <- File with all necessary packages
 
 
 --------
