@@ -14,7 +14,7 @@ if __name__=='__main__':
 ```
 
 ## Getting started
-To get started make sure you have Git, GitHub and enviroment for programming language of your choice downloaded and connected.
+To get started make sure you have Git, GitHub and environment for programming language of your choice downloaded and connected.
 
 Clone the repository to your local machine and explore the scripts.
 
@@ -44,9 +44,10 @@ Sebastian Konicz - sebastian.konicz@gmail.com
 
     +-- data               <- Folder with all necessary data
     ¦   ¦
-    ¦   +-- __init__.py    				<- Makes src a Python module
+    ¦   +-- __init__.py                     <- Makes src a Python module
     ¦   ¦
     +-- notebook           <-
+    ¦   ¦
     +-- src                <- Source code for use in this project.
 	¦   ¦
     ¦   +-- __init__.py    				    <- Makes src a Python module
@@ -61,14 +62,16 @@ Sebastian Konicz - sebastian.konicz@gmail.com
     ¦   ¦
     ¦   +-- PNA_04_.py           	        <-
     ¦   ¦
-    ¦   +-- c_other         			    <- Other useful programs
+    ¦   +-- PNA_05_.py         			    <-
     ¦   ¦
-    ¦   +-- d_not_classified         	    <- Work in progress scripts or files for deletion
-    ¦
+    ¦   +-- PNA_06_.py         	            <-
     ¦  
     +-- .gitignore.py      <- File for excluding other files and folders from GitHub repo
+    ¦
     +-- LICENSE            <- ?
+    ¦
  	+-- README.md          <- The top-level README for developers using this project.
+    ¦
     +-- requirements.txt   <- File with all necessary packages 					<- ?
 
 
