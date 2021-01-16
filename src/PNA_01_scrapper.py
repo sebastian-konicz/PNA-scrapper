@@ -28,7 +28,7 @@ def main():
         table_df = table[0]
         print("table form page {}".format(i))
         # renaming columna
-        table_df.columns = ["PNA", "ADRES", "WOJ"]
+        table_df.columns = ["PNA", "ADRESS", "WOJ"]
         # dropping first row
         table_df = table_df.iloc[1:]
         tables_list.append(table_df)

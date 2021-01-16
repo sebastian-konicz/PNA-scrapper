@@ -14,7 +14,7 @@ def main():
     project_dir = str(Path(__file__).resolve().parents[1])
 
     # dataframe with 'dirty' data
-    file_path = r'\data\interim\zipcodes_copy.csv'
+    file_path = r'\data\interim\01_zipcodes_copy.csv'
 
     # read dataframe
     zip = pd.read_csv(project_dir + file_path)
@@ -22,8 +22,8 @@ def main():
     # new column with ZIP code
     zip['PNA_code'] = ""
     # rearanging columns
-    zip = zip[['PNA_code', "PNA", 'ADRES', 'WOJ']]
-    zip.columns = ["PNA", "CITY", "ADRES", "WOJ"]
+    zip = zip[['PNA_code', "PNA", 'ADRESS', 'WOJ']]
+    zip.columns = ["PNA", "CITY", "ADRESS", "WOJ"]
 
     # dropping empty values and filling them with values form previous rows
     zip = zip.ffill(axis=0)
