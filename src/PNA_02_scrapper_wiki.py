@@ -63,7 +63,7 @@ def main():
 
     # saving dataframe
     print("saving files")
-    municipalities.to_csv(project_dir + r'\data\interim\01_municipalities.csv', index=False, encoding='UTF-8')
+    municipalities.to_csv(project_dir + r'\data\interim\02_municipalities.csv', index=False, encoding='UTF-8')
 
     # end time of program + duration
     end_time = time.time()
