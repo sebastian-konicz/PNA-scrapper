@@ -23,7 +23,7 @@ def main():
     tables_list = []
 
     # looping throug tabels on page from page 3 to
-    for i in range(4, 1649):
+    for i in range(4, 6):
         table = tabula.read_pdf(link, pages=i)
         table_df = table[0]
         print("table form page {}".format(i))
@@ -31,6 +31,7 @@ def main():
         table_df.columns = ["PNA", "ADRESS", "WOJ"]
         # dropping first row
         table_df = table_df.iloc[1:]
+        print(table_df)
         tables_list.append(table_df)
 
     # concatenating dataframes

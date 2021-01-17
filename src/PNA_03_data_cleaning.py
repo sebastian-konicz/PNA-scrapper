@@ -16,41 +16,55 @@ def main():
     project_dir = str(Path(__file__).resolve().parents[1])
 
     # dataframe with 'dirty' data
-    zip_path = r'\data\interim\01_zipcodes.csv'
+    zip_path = r'\data\interim\01_zipcodes_copy_2.csv'
 
     # dataframe with 'municipalities data
     mun_path = r'\data\interim\02_municipalities.csv'
 
     # read dataframes
-    zip = pd.read_csv(project_dir + zip_path)
-    mun = pd.read_csv(project_dir + mun_path)
+    zip = pd.read_csv(project_dir + zip_path, sep=',')
+    mun = pd.read_csv(project_dir + mun_path, sep=',')
 
     # MUNICIPALITIES DATA
-    # list of municipalities (in lovercase)
-    mun['municipality'] = mun['municipality'].apply(lambda text: text.lower())
-    municipalities = mun["municipality"].tolist()
-    # removing duplicates
-    municipalities = list(dict.fromkeys(municipalities))
-    municipalities.sort()
-    print(municipalities)
+    mun["concat"] = mun.apply(lambda mun: (mun["municipality"] + " " + mun["county"]).lower(), axis=1)
+    concat = mun["concat"].tolist()
+    print(len(concat))
+    concat = list(dict.fromkeys(concat))
+    print(len(concat))
+    concat.sort()
+    print(concat)
 
-    # list of counties
-    mun['county'] = mun['county'].apply(lambda text: text.lower())
-    counties = mun["county"].tolist()
-    # removing duplicates
-    counties = list(dict.fromkeys(counties))
-    counties.sort()
-    print(counties)
+    # # list of municipalities (in lovercase)
+    # mun['municipality'] = mun['municipality'].apply(lambda text: text.lower())
+    # municipalities = mun["municipality"].tolist()
+    # # removing duplicates
+    # municipalities = list(dict.fromkeys(municipalities))
+    # municipalities.sort()
+    # print(municipalities)
+
+    # # list of counties
+    # mun['county'] = mun['county'].apply(lambda text: text.lower())
+    # counties = mun["county"].tolist()
+    # # removing duplicates
+    # counties = list(dict.fromkeys(counties))
+    # counties.sort()
+    # print(counties)
 
     # ZIP-CODE DATA
+    print(type(zip))
+    # dropping empty values and filling them with values form previous rows
+    zip['PNA'].fillna(axis=0, method='ffill', inplace=True)
+    zip['ADRESS'].fillna(axis=0, method='ffill', inplace=True)
+    zip['WOJ'].fillna(axis=0, method='ffill', inplace=True)
+    print("saving file")
+    # print(zip)
+    # zip.to_csv(project_dir + r'\data\interim\02_zipcodes_clean2.csv', index=False, encoding='UTF-8')
+
     # new column with ZIP code
     zip['PNA_code'] = ""
     # rearanging columns
     zip = zip[['PNA_code', "PNA", 'ADRESS', 'WOJ']]
     zip.columns = ["PNA", "CITY", "ADRESS", "WOJ"]
-
-    # dropping empty values and filling them with values form previous rows
-    zip = zip.ffill(axis=0)
 
     # PNA - extracting zip code to
     zip['PNA'] = zip['CITY'].map(lambda statement: zip_code_extr(statement))
@@ -61,6 +75,11 @@ def main():
     # ADRESS - to lowercase
     zip['ADRESS'] = zip['ADRESS'].apply(lambda text: text.lower())
 
+    # CONCAT - extracting right municipality
+    zip['CONCAT'] = ""
+    # comapring counties with the counties in ADRESS
+    zip["CONCAT"] = zip.apply(lambda zip: concat_match(zip["ADRESS"], concat), axis=1)
+
     # # COU - extracting right municipality
     # zip['COU'] = ""
     # # comapring counties with the counties in ADRESS
@@ -69,7 +88,7 @@ def main():
     # ADRESS_2 - cleaned column for better municipality association
     zip['ADRESS_2'] = ""
     # strippirng counties from adress column
-    zip['ADRESS_2'] = zip.apply(lambda zip: strippping_counties(zip["ADRESS"], zip["COU"]), axis=1)
+    zip['ADRESS_2'] = zip.apply(lambda zip: strippping_concat(zip["ADRESS"], zip["CONCAT"]), axis=1)
 
     # # MUN - extracting right municipality
     # zip['MUN'] = ""
@@ -105,6 +124,22 @@ def zip_code_remv(statement):
         pass
     return city
 
+# finding match for municipality in ADRESS_2 column
+def concat_match(text, concat):
+    result = ''
+    for con in concat:
+        ratio = fuzz.partial_ratio(text, con)
+        if (ratio == 100) & (len(con) <= len(text)):
+            print(len(con))
+            print(len(text))
+            print(text)
+            print(con)
+            print(ratio)
+            result = con
+        else:
+            pass
+    return result
+
 # # finding match for municipality in ADRESS_2 column
 # def municip_match(text, municipalities):
 #     result = ''
@@ -135,9 +170,9 @@ def zip_code_remv(statement):
 #             pass
 #     return result
 
-def strippping_counties(text, county):
-    if text.find(county) != -1:
-        index = text.find(county)
+def strippping_concat(text, concat):
+    if text.find(concat) != -1:
+        index = text.find(concat)
         text = text[: index]
     else:
         pass
