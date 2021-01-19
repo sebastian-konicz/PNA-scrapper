@@ -17,7 +17,8 @@ def main():
     project_dir = str(Path(__file__).resolve().parents[1])
 
     # dataframe with 'dirty' data
-    zip_path = r'\data\interim\01_zipcodes_test.csv'
+    zip_path = r'\data\interim\01_zipcodes.csv'
+    # zip_path = r'\data\interim\01_zipcodes_test.csv'
 
     # dataframe with 'municipalities data
     mun_path = r'\data\interim\02_municipalities.csv'
@@ -57,6 +58,7 @@ def main():
     # print(zip)
     zip.to_csv(project_dir + r'\data\interim\02_zipcodes_clean_1.csv', index=False, encoding='UTF-8')
 
+
     # new column with ZIP code
     zip['PNA_code'] = ""
     # rearanging columns
@@ -94,10 +96,12 @@ def main():
         if zip['CONCAT'] != ""
         else zip['CONCAT_LONG'], axis=1)
 
-    print(zip['MUN_COU'])
+
     # filling missing values in municipality and county column
-    zip['MUN_COU'] = zip.apply(lambda zip: zip['MUN_COU'].replace(r'^\s*$', np.nan, regex=True), axis=1)
-    zip['MUN_COU'].fillna(axis=0, method='ffill', inplace=True)
+    # zip['MUN_COU'] = zip.apply(lambda zip: zip['MUN_COU'].replace(r'^\s*$', np.nan, regex=True), axis=1)
+    # zip['MUN_COU'].replace(r'^\s*$', np.nan, regex=True)
+    # print(zip['MUN_COU'])
+    # zip['MUN_COU'].fillna(axis=0, method='ffill', inplace=True)
 
     # # dropping unnecessary columns
     # zip.drop(columns=['CONCAT', 'CONCAT_LONG'], inplace=True)
