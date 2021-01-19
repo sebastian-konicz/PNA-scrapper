@@ -96,7 +96,6 @@ def main():
         if zip['CONCAT'] != ""
         else zip['CONCAT_LONG'], axis=1)
 
-
     # filling missing values in municipality and county column
     # zip['MUN_COU'] = zip.apply(lambda zip: zip['MUN_COU'].replace(r'^\s*$', np.nan, regex=True), axis=1)
     # zip['MUN_COU'].replace(r'^\s*$', np.nan, regex=True)
