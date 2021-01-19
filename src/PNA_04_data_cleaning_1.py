@@ -55,9 +55,6 @@ def main():
     zip['ADRESS'].fillna(axis=0, method='ffill', inplace=True)
     zip['WOJ'].fillna(axis=0, method='ffill', inplace=True)
     print("saving file")
-    # print(zip)
-    zip.to_csv(project_dir + r'\data\interim\02_zipcodes_clean_1.csv', index=False, encoding='UTF-8')
-
 
     # new column with ZIP code
     zip['PNA_code'] = ""
@@ -122,7 +119,7 @@ def main():
 
     # saving dataframe
     print("saving file")
-    zip.to_csv(project_dir + r'\data\interim\02_zipcodes_clean_2.csv', index=False, encoding='UTF-8')
+    zip.to_csv(project_dir + r'\data\interim\04_zipcodes_clean.csv', index=False, encoding='UTF-8')
 
     # end time of program + duration
     end_time = time.time()

@@ -26,13 +26,19 @@ def main():
     # column names
     city_list.columns = ['city', 'type', 'municipality', 'county', 'voivodeship', 'teryt', 'dap', 'remarks',
                          'genitive', 'adjective', 'unnamed_1', 'unnamed_2']
+
     # dropping unnecessary columns
     city_list.drop(columns=['remarks', 'genitive', 'adjective', 'unnamed_1', 'unnamed_2'], inplace=True)
-    print(city_list.head())
 
-    # # saving dataframe
-    # print("saving files")
-    # city_list.to_csv(project_dir + r'\data\interim\02_municipalities.csv', index=False, encoding='UTF-8')
+    # cleaning data
+    column_list = ['city', 'type', 'municipality', 'county', 'voivodeship']
+    for column in column_list:
+        city_list[column] = city_list[column].apply(lambda x: x.replace('\n', ""))
+        city_list[column] = city_list[column].apply(lambda x: x.replace('--', "-"))
+
+    # saving dataframe
+    print("saving files")
+    city_list.to_csv(project_dir + r'\data\interim\03_city_list.csv', index=False, encoding='UTF-8')
 
     # end time of program + duration
     end_time = time.time()
